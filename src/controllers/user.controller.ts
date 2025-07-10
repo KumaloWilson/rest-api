@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import e, { Request, Response } from 'express';
 import { findAllUsers, findUserById, addUser } from '../services/user.service';
 
 
@@ -6,7 +6,19 @@ import { findAllUsers, findUserById, addUser } from '../services/user.service';
 export const getUsers = (req: Request, res: Response) => {
     const users = findAllUsers();
 
-    res.json(users);
+    if(users.length > 0){
+        res.status(200).json({
+            success: true,
+            count: users.length,
+            data: users,
+        });
+    }else{
+        res.status(404).json({
+            success: false,
+            message: "No users found"
+        })
+    }
+
 }
 
 
