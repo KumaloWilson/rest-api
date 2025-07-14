@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-// import userRoutes from './routes/users.routes';
+import userRoutes from './routes/users.routes';
 import dotenv from 'dotenv';
 import { connectToDatabase } from './config/database';
 
@@ -15,7 +15,7 @@ app.get('/', (req: Request, res: Response) => {
     res.json('Hello, World!');
 });
 
-// app.use('/users', userRoutes);
+app.use('/users', userRoutes);
 
 
 const startServer = async () => {
