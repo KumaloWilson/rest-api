@@ -2,8 +2,8 @@
   "compilerOptions": {
     "target": "es2016",
     "module": "commonjs",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,         
+    "experimentalDecorators": true,        // ← Uncomment this line
+    "emitDecoratorMetadata": true,         // ← Uncomment this line
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
