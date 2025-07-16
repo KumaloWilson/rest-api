@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import userRoutes from './routes/users.routes';
+import authRoutes from './routes/auth.routes';
 import dotenv from 'dotenv';
 import { connectToDatabase } from './config/database';
 
@@ -15,6 +16,9 @@ app.get('/', (req: Request, res: Response) => {
     res.json('Hello, World!');
 });
 
+
+
+app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
 
 
